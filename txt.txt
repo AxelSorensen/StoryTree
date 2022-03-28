@@ -1,0 +1,20 @@
+    const [loadedNodes, setLoadedNodes] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    const ref = firebase.firestore().collection("savedNodes");
+
+    function getSavedNodes() {
+        setLoading(true);
+        ref.onSnapShot((querySnapshot) => {
+        const items = [];
+        querySnapshot.forEach((doc) => {
+            items.push(doc.data());
+        });
+        setLoadedNodes(items);
+        setLoading(false);
+    });
+}
+
+    useEffect(() => {
+        getSavedNodes();
+    }, []);
