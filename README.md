@@ -57,4 +57,4 @@ with edges connecting `source` and `target` ids — the graph you drag out on sc
 
 ## Status
 
-🚧 Early prototype — saved graphs live in memory only (gone on refresh), play mode uses browser `prompt()`/`alert()` dialogs, and Firebase is a dependency waiting to be wired up for real persistence.
+✅ Runs cleanly — `npm install && npm run build` verified working as of 2026-09-03 (build completes with only lint warnings, no errors; `npm start` also compiles the same code, but a live dev-server smoke test on this machine hit an unrelated host-disk-space limit, not a code issue). Still an early prototype: saved graphs live in memory only (gone on refresh), play mode uses browser `prompt()`/`alert()` dialogs, and Firebase is a dependency waiting to be wired up for real persistence.
